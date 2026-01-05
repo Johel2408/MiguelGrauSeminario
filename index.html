@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Promoción AR</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+  <!-- MindAR -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #000;
+    }
+
+    /* ===== OVERLAY INICIAL ===== */
+    #startOverlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    #startOverlay h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    #startOverlay h2 {
+      margin: 10px 0 30px;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    #startBtn {
+      padding: 14px 32px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+
+    #footerBrand {
+      position: absolute;
+      bottom: 25px;
+      font-size: 12px;
+      opacity: 0.8;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= OVERLAY INICIAL ================= -->
+<div id="startOverlay">
+  <h1>PROMO 2025</h1>
+  <h2>“Fratelli Di Cuore”</h2>
+
+  <button id="startBtn">▶ Iniciar</button>
+
+  <div id="footerBrand">
+    PRODUCCIONES RUIZ<br>
+    Fotografía & Video
+  </div>
+</div>
+
+<!-- ================= ESCENA AR ================= -->
+<a-scene
+  mindar-image="imageTargetSrc: targets.mind;"
+  vr-mode-ui="enabled: false"
+  device-orientation-permission-ui="enabled: false"
+>
+
+  <!-- ========= ASSETS ========= -->
+  <a-assets>
+
+    <!-- ===== VIDEOS ===== -->
+    <video id="video01" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno01.mp4?alt=media&token=b3d474ce-e8b3-4d53-8995-86c3c6908ecb" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video02" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno02.mp4?alt=media&token=32e2aa58-4aa4-494e-9b06-6f90564ecdce" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video03" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno03.mp4?alt=media&token=0e91ef3d-8303-4524-8994-d19349d9d6c4" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video04" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno04.mp4?alt=media&token=230b4c5f-f206-4729-b227-a7690503832a" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video05" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno05.mp4?alt=media&token=08887edf-bec6-4c4c-96ce-986152b5e144" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video06" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno06.mp4?alt=media&token=6423bf69-e44f-49de-b48f-b560b80db2be" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video07" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno07.mp4?alt=media&token=3bf9d1b9-b90d-4331-88ba-fe93aeb0b2bd" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video08" src="Ahttps://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno08.mp4?alt=media&token=cb473919-9e24-48fc-b2b6-324460222944" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video09" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno09.mp4?alt=media&token=4a4eb04a-eb2f-4833-acad-d254629962e3" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video10" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno10.mp4?alt=media&token=c16c8a94-bd58-4d95-adc4-fcfa2af15264" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video11" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno11.mp4?alt=media&token=65a17a0a-5145-409e-a05b-08c82255d10d" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video12" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno12.mp4?alt=media&token=9de65553-2ccd-4354-b41c-eb2f0a8af570" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video13" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno13.mp4?alt=media&token=945ec1e7-4f8f-4564-bbaa-c2caed39a757" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video14" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno14.mp4?alt=media&token=f0f3f908-3d92-4d20-bb1c-35793553afd5" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+    <video id="video15" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/videos%2Falumno15.mp4?alt=media&token=8ed03d22-ac1a-4bc4-8f83-772ac4a5e38b" loop playsinline webkit-playsinline crossorigin="anonymous"></video>
+
+    <!-- ===== AUDIOS ===== -->
+    <audio id="audio01" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno01.mp3?alt=media&token=da643ad3-97f2-45d3-bca2-d1a8b10522dd" crossorigin="anonymous"></audio>
+    <audio id="audio02" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno02.mp3?alt=media&token=ae35da5a-4a69-4f48-a3ae-c857168b120e" crossorigin="anonymous"></audio>
+    <audio id="audio03" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno03.mp3?alt=media&token=132fc504-4577-41be-a8ef-a4081a0896de" crossorigin="anonymous"></audio>
+    <audio id="audio04" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno04.mp3?alt=media&token=738240b3-45b6-403c-acb4-b8c9d56d8883" crossorigin="anonymous"></audio>
+    <audio id="audio05" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno05.mp3?alt=media&token=5473f02d-c332-422d-b80e-d30f1a9a1698" crossorigin="anonymous"></audio>
+    <audio id="audio06" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno06.mp3?alt=media&token=cfc933f9-66b8-4dcb-ac02-7d1de548da7a" crossorigin="anonymous"></audio>
+    <audio id="audio07" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno07.mp3?alt=media&token=75d89ff2-6181-40ce-bf11-b48de35b5a3d" crossorigin="anonymous"></audio>
+    <audio id="audio08" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno08.mp3?alt=media&token=73e4e591-7c5f-4abc-8f0a-d3f903b72315" crossorigin="anonymous"></audio>
+    <audio id="audio09" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno09.mp3?alt=media&token=141b71bc-0f3b-4e12-8e0f-bf84709d80eb" crossorigin="anonymous"></audio>
+    <audio id="audio10" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno10.mp3?alt=media&token=f65b312f-05ec-4c24-acd2-9acc0194838a" crossorigin="anonymous"></audio>
+    <audio id="audio11" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno11.mp3?alt=media&token=9713a307-938c-4bb5-a41d-8a368fadc20f" crossorigin="anonymous"></audio>
+    <audio id="audio12" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno12.mp3?alt=media&token=f626638b-681e-4df1-b8ec-acb75ce12189" crossorigin="anonymous"></audio>
+    <audio id="audio13" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno13.mp3?alt=media&token=7a17e550-b5ee-4858-80a0-a6dabb529fbf" crossorigin="anonymous"></audio>
+    <audio id="audio14" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno14.mp3?alt=media&token=54c5dcab-5d90-48b6-8a74-88cac4883b5e" crossorigin="anonymous"></audio>
+    <audio id="audio15" src="https://firebasestorage.googleapis.com/v0/b/promo-ar-2025.firebasestorage.app/o/audios%2Falumno15.mp3?alt=media&token=2b6cdc23-06cb-4aa4-a125-fee800a127bb" crossorigin="anonymous"></audio>
+
+  </a-assets>
+
+  <!-- ================= TARGETS ================= -->
+
+  <!-- ALUMNO 01 -->
+  <a-entity mindar-image-target="targetIndex: 0" data-video="video01" data-audio="audio01">
+    <a-video src="#video01" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 02 -->
+  <a-entity mindar-image-target="targetIndex: 1" data-video="video02" data-audio="audio02">
+    <a-video src="#video02" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 03 -->
+  <a-entity mindar-image-target="targetIndex: 2" data-video="video03" data-audio="audio03">
+    <a-video src="#video03" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 04 -->
+  <a-entity mindar-image-target="targetIndex: 3" data-video="video04" data-audio="audio04">
+    <a-video src="#video04" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 05 -->
+  <a-entity mindar-image-target="targetIndex: 4" data-video="video05" data-audio="audio05">
+    <a-video src="#video05" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 06 -->
+  <a-entity mindar-image-target="targetIndex: 5" data-video="video06" data-audio="audio06">
+    <a-video src="#video06" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 07 -->
+  <a-entity mindar-image-target="targetIndex: 6" data-video="video07" data-audio="audio07">
+    <a-video src="#video07" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 08 -->
+  <a-entity mindar-image-target="targetIndex: 7" data-video="video08" data-audio="audio08">
+    <a-video src="#video08" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 09 -->
+  <a-entity mindar-image-target="targetIndex: 8" data-video="video09" data-audio="audio09">
+    <a-video src="#video09" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 10 -->
+  <a-entity mindar-image-target="targetIndex: 9" data-video="video10" data-audio="audio10">
+    <a-video src="#video10" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 11 -->
+  <a-entity mindar-image-target="targetIndex: 10" data-video="video11" data-audio="audio11">
+    <a-video src="#video11" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 12 -->
+  <a-entity mindar-image-target="targetIndex: 11" data-video="video12" data-audio="audio12">
+    <a-video src="#video12" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 13 -->
+  <a-entity mindar-image-target="targetIndex: 12" data-video="video13" data-audio="audio13">
+    <a-video src="#video13" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 14 -->
+  <a-entity mindar-image-target="targetIndex: 13" data-video="video14" data-audio="audio14">
+    <a-video src="#video14" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <!-- ALUMNO 15 -->
+  <a-entity mindar-image-target="targetIndex: 14" data-video="video15" data-audio="audio15">
+    <a-video src="#video15" width="1" height="1.57" material="shader: flat"></a-video>
+  </a-entity>
+
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+</a-scene>
+
+<!-- ================= LOGICA ================= -->
+<script>
+  const overlay = document.getElementById('startOverlay');
+  const startBtn = document.getElementById('startBtn');
+  let audioUnlocked = false;
+
+  startBtn.addEventListener('click', () => {
+    audioUnlocked = true;
+    overlay.style.display = 'none';
+  });
+
+  document.querySelectorAll('[mindar-image-target]').forEach(target => {
+    const video = document.getElementById(target.dataset.video);
+    const audio = document.getElementById(target.dataset.audio);
+
+    target.addEventListener('targetFound', () => {
+      if (!audioUnlocked) return;
+      video.play().catch(() => {});
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    });
+
+    target.addEventListener('targetLost', () => {
+      video.pause();
+      video.currentTime = 0;
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  });
+</script>
+
+</body>
+</html>
